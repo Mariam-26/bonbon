@@ -1,0 +1,58 @@
+{% extends 'user.html.twig' %}
+
+{% block title %}Profil de
+	{{ app.user.firstname }}
+	{{ app.user.name }}
+
+{% endblock %}
+
+{% block body %}
+	<div class="container">
+		{% for message in app.flashes('message') %}
+			<div class="col-xs4">
+				<div class="p-3 my-2 rounded-2 success">{{message}}</div>
+			</div>
+		{% endfor %}
+		<div class="col-xs4 p-5 m-auto">
+			<h1>Profil de
+				{{ app.user.firstname }}
+				{{ app.user.name }}</h1>
+		</div>
+
+		<div class="grix xs4 container m-5 m-auto">
+			<div class="col-xs1">Prénom :</div>
+			<div class="col-xs3">{{ app.user.firstname }}</div>
+
+			<div class="col-xs1">Nom :</div>
+			<div class="col-xs3">{{ app.user.name }}</div>
+
+			<div class="col-xs1">Email :</div>
+			<div class="col-xs3">{{ app.user.email }}</div>
+
+		</div>
+
+		<div class="col-xs4 m-5">
+			<a href="{{ path('user_profil_modifier') }}" class="btn shadow-1 rounded-1 blue">Modifier le profil</a>
+
+			<a href="{{ path('user_pass_modifier') }}" class="btn shadow-1 rounded-1 blue">Modifier le mot de passe</a>
+		</div>
+
+		<div class="container m-auto">
+            <div class="col-xs4">
+                <h3>Article de
+                    {{ app.user.firstname }}
+                    {{ app.user.name }}
+                    ({{ app.user.articles|length }})
+                </h3>
+            </div>
+        </div>
+
+		<div class="grix xs2 container">
+			{% for article in app.user.articles %}
+				<h4 class="">Titre :</h4>
+				<h6 class="">{{ article.title }}</h6>
+			{% endfor %}
+		</div>
+
+	</div>
+{% endblock %}
