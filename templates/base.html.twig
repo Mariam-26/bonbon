@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>
+			{% block title %}Welcome!
+			{% endblock %}
+		</title>
+
+		{# MON LIEN BOOTSTRAP #}
+		<link
+		rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.6.1/cosmo/bootstrap.min.css" integrity="sha512-iF9/O0BibKDhjTXob/oHNVh6sgLkLvg3w/pkj0eC9ZrDdqNWUwkKHUSszBF8mQclupFD2utnWXjojwF3BhdnoQ==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+
+		{# <!--  Mon lien Axentix CSS minified  -->
+				<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/axentix@2.0.1/dist/axentix.min.css"> #}
+
+		{% block stylesheets %}{% endblock %}
+		{# MA FEUILLE DE FEUILLE DE STYLES CSS #}
+		<link rel="stylesheet" href="{{ asset('css/style.css') }}">
+
+	</head>
+	<body>
+
+		{# INCLUSION DE L'ENTÊTE #}
+		{% include "nav.html.twig" %}
+
+		{% block body %}{% endblock %}
+
+
+		<footer class="footer footer-primary bg-primary mx-auto">
+			<div class="container-flui p-5 text-center ">Copyright © 2022 - 					Mariam Ouédraogo</div>
+		</footer>
+
+		{# BOOSTRAP JS #}
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+		{% block javascripts %}{% endblock %}
+
+		{# MON JAVASCRIPT #}
+
+	</body>
+</html>
