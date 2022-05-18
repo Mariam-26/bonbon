@@ -1,0 +1,54 @@
+nav a {
+    color: black;
+}
+
+.blog {
+    font-size: 1.5rem;
+    margin-left: 20px;
+}
+
+.bar {
+    font-size: 1rem;
+    margin-right: 15px;
+    color: rgba(255, 255, 255, 0.7) !important;
+    text-transform: uppercase;
+}
+
+nav,
+footer,
+.navUser {
+    height: 20vh;
+}
+
+.accueil {
+    height: 400px;
+    width: 400px;
+}
+
+h1,
+h2 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+.btn {
+    font-family: sans-serif;
+}
+
+.foo,
+.bar {
+    background-color: red;
+}
+
+.categories {
+    width: 60% !important;
+}
+
+.deconnecter {
+    color: red;
+}
