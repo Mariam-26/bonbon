@@ -1,0 +1,68 @@
+<nav
+	class="navbar navbar-expand-lg fond container-fluid text-end navBar">
+	{# <img src=" {{ asset('/img/logo.jng') }} " alt="IMAGE 2" class="img-fluid"> #}
+
+	{# L'URL DE MON ACCUEIL #}
+	<a href=" {{ path('app_home') }} " class="navbar-brand blog">Blog de <span class="ma">Ma</span></a>
+	<button class="nav bouton navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+		<ul class="navbar-nav">
+			<li class="nav-item">
+				<a class="nav-link" href=" {{ path('app_home') }}">Accueil</a>
+			</li>
+
+			{% if app.user %}
+						<li class="nav-item">
+				<a class="nav-link" href=" {{ path('app_user') }}">Profil</a>
+			</li>
+
+			{% else %}
+							<li class="nav-item">
+				<a class="nav-link" href=" {{ path('app_register') }}">Inscription</a>
+			</li>
+
+			<li class="nav-item">
+				<a class="nav-link" href=" {{ path('app_login') }} ">Connexion</a>
+			</li>
+			
+			{% endif %}
+			{% if app.user %}
+			<li class="nav-item">
+				<a class="nav-link" href=" {{ path('user_articles_ajout') }}">Article</a>
+			</li>
+
+			<li class="nav-item">
+				<a class="nav-link" href=" {{ path('articles_retour') }}">Articles</a>
+			</li>
+		
+			{# <li class="nav-item">
+				<a class="nav-link" href=" {{ path('admin_categories_ajout') }}">Catégories</a>
+			</li> #}
+
+			<li class="nav-item">
+				<a class="nav-link" href=" {{ path('app_logout') }} ">Déconnexion</a>
+			</li>
+			{# {% else %} #}
+			{% if app.user.roles[0] == 'ROLE_ADMIN' %}
+{# 
+				<li class="nav-item">
+				<a class="nav-link" href="#">Admin</a>
+			</li> #}
+
+			<li class="nav-item">
+				<a class="nav-link" href=" {{ path('admin_categories_ajout') }}">Catégories</a>
+			</li>
+
+			<li class="nav-item">
+				<a class="nav-link" href=" {{ path('admin_articles_home') }}">Gérer les articles</a>
+			</li>
+			
+			{% endif %}
+			{% endif %}
+
+      </ul>
+		</div>
+	</nav>
+
