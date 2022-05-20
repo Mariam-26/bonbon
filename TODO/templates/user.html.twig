@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>
+			{% block title %}Welcome!
+			{% endblock %}
+		</title>
+
+		<!--  Mon lien Axentix CSS minified  -->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/axentix@2.0.1/dist/axentix.min.css">
+
+		
+		
+		{% block stylesheets %}
+		
+		{% endblock %}
+		{# MA FEUILLE DE FEUILLE DE STYLES CSS #}
+		<link rel="stylesheet" href="{{ asset('css/style.css') }}">
+
+	</head>
+	<body class="layout-sidenav">
+
+		<header> 
+			<nav class="navbar shadow-1 fond navUser">
+				<a href=" {{ path('app_home') }} " class="navbar-brand">Blog de <span class="ma font-weight-bold">Ma</span></a>
+				<div class="navbar-menu ml-auto">
+					<a class="navbar-link" href="{{ path('app_home') }}  ">Accueil</a>
+				</div>
+			</nav>
+		</header>
+
+		<div id="example-sidenav" data-ax="sidenav" class="sidenav shadow-1 sidenav-fixed white">
+			<div class="sidenav-header">
+				<img class="sidenav-logo dropshadow-1" src="{{ asset('img/logo.png') }}" alt="Logo"/>
+			</div>
+			<a href=" {{ path('app_user') }} " class="sidenav-link active">Mon profil</a>
+			{# <a href="#" class="sidenav-link">Mes articles ({{ app.user.articles|length }})  </a> #}
+
+		</div>
+
+		<main>
+			<button data-target="example-sidenav" class="btn rounded-1 press amaranth dark-1 hide-md-up m-3">
+				Navigation
+			</button>
+			{% block body %}{% endblock %}
+		</main>
+
+		<footer class="footer fond mx-auto"> 
+			<div class="footer fx-center dark-1">Copyright © 2022 - 					Mariam Ouédraogo</div>   
+    </footer>
+
+
+		<!-- Mon lien Axentix JS minified version -->
+		<script src="https://cdn.jsdelivr.net/npm/axentix@2.0.1/dist/axentix.min.js"></script>
+
+
+		{% block javascripts %}
+			{{ encore_entry_script_tags('app') }}
+		{% endblock %}
+
+		<script>
+			var sidenav = new Sidenav('#example-sidnav');
+		</script>
+
+		{# MON JAVASCRIPT #}
+		 <script src="{{ asset('js/script.js') }}"></script>
+
+	</body>
+</html>
