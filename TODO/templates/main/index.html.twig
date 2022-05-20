@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Articles
+{% endblock %}
+
+{% block body %}
+	<div container>
+		<div class="my-5 bg-light">
+			<div class="container">
+				<h1 class="display-5 bienVenue">Si vous adorez écrire des articles vous êtes les
+											biensvenus sur ce site de Blog !</h1>
+			</div>
+		</div>
+		{# <pre>
+											{{ dump(articles.est_verifier) }}
+										</pre> #}
+		{# {% if articles.estVerifier == 1 %} #}
+		<div class="card-group container d-flex">
+			<div class="row d-flex">
+				{% for article in articles %}
+					{% if article.estVerifier == 1 %}
+					<div class="col-lg-6 col-md-6 col-sm-12">
+						<img src="{{ article.image}}" alt="Illustration de l'article {{article.title}}" class="card-img-top img-fluid accueilImage">
+						<div class="card-body">
+							<h3 class="card-title">{{article.title}}</h3>
+							<h5>Catégorie :
+								{{article.categories.name}}
+							</h5>
+							<p class="card-text">{{article.content|slice(0,100)|raw}}
+								...</p>
+							<h6>Author :
+								{{article.author}}
+							</h6>
+							<a href="{{ path('articles_details', {id: article.id}) }}" class="btn btn-primary my-5">VOIR PLUS</a>
+						</div>
+					</div>
+					{% endif %}  
+				{% endfor %}
+			</div>
+		</div>
+
+		{# {{ dump(articles) }} #}
+	{% endblock %}
