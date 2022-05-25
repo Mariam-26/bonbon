@@ -1,0 +1,225 @@
+/* NAV */
+
+nav {
+    height: 20vh;
+}
+
+.nav span {
+    background-color: white;
+}
+
+.bouton {
+    border: black;
+}
+
+nav a {
+    color: black;
+    font-weight: bold !important;
+}
+
+.blog {
+    font-size: 1.5rem;
+    margin-left: 20px;
+    font-weight: bold !important;
+}
+
+.ma {
+    color: rgb(238, 15, 190);
+}
+
+.navBar {
+    font-size: 1rem;
+    margin-right: 15px;
+    color: rgba(255, 255, 255, 0.7) !important;
+    text-transform: uppercase;
+}
+
+
+/* FIN NAV */
+
+
+/* USER */
+
+.navUser {
+    height: 20vh;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    font-weight: bold !important;
+}
+
+.userArticles {
+    width: 70%;
+    margin: auto;
+}
+
+
+/* FIN USER */
+
+
+/* FOOTER */
+
+footer {
+    height: 20vh;
+    font-weight: bold !important;
+}
+
+
+/* BASE */
+
+.copyright {
+    margin: auto;
+}
+
+
+/* BODY */
+
+h1,
+h2 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+.btn {
+    font-family: sans-serif;
+}
+
+.fond {
+    background-color: rgb(113, 201, 255);
+}
+
+
+/* FIN BODY */
+
+
+/* .categories {
+    width: 60% !important;
+} */
+
+
+/* TEMPLATE ARTICLE */
+
+.contenu {
+    resize: none;
+}
+
+
+/* .articlesDetails {
+    height: 80vh !important;
+} */
+
+
+/* FIN TEMPLATE ARTICLE */
+
+
+/* ADMIN CATEGORIES */
+
+.ajoutCategories {
+    width: 50%;
+    height: 70vh !important;
+}
+
+.image {
+    height: 400px !important;
+    width: 600px !important;
+}
+
+.adminArticles {
+    background-color: blue;
+    height: 100vh !important;
+}
+
+
+/* FIN ADMIN CATEGORIES */
+
+
+/* SECURITY LOGIN */
+
+.login {
+    width: 50%;
+}
+
+.deconnecter {
+    color: red;
+}
+
+
+/* MAIN INDEX */
+
+.bienVenue {
+    font-size: 1.5em;
+}
+
+.accueilImage {
+    height: 400px !important;
+    width: 600px !important;
+}
+
+
+/* MEDIA QUERY */
+
+@media screen and (max-width: 760px) {
+    /* NAV */
+    nav ul a:last-child {
+        margin-bottom: -15px !important;
+    }
+    /* MAIN INDEX */
+    .bienVenue {
+        text-indent: 50px;
+        font-size: 1em;
+    }
+    nav,
+    footer {
+        height: 39vh;
+    }
+    /* FIN MAIN INDEX */
+    /* FOOTER */
+    .footer {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+    }
+    .copyright {
+        margin: auto;
+    }
+    /* USER */
+    .user {
+        margin: auto !important;
+        text-align: center !important;
+    }
+    .article {
+        font-size: 1.4rem !important;
+    }
+    .profil {
+        font-size: 1.5rem !important;
+    }
+    .modif a {
+        font-size: 12px !important;
+    }
+    .titre {
+        font-size: 1.1rem !important;
+    }
+    .categorie {
+        font-size: 1.1rem !important;
+    }
+    .adresse {
+        font-size: 1.1rem !important;
+    }
+    /* FIN USER */
+    /* ADMIN CATEGORIES */
+    .ajoutCategories {
+        width: 70%;
+    }
+    .ajoutCategorie {
+        font-size: 1.5rem !important;
+    }
+    /* FIN ADMIN CATEGORIES */
+}
